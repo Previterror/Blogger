@@ -22,8 +22,8 @@ async function getBlogPosts() {
 <template>
   <section class="container">
     <div class="row justify-content-center m-3">
-      <button class="btn btn-info col-6" data-bs-toggle="modal" data-bs-target="#exampleModal">New Post <i
-          class="mdi mdi-plus"></i></button>
+      <button v-if="AppState.account" class="btn btn-info col-6" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">New Post <i class="mdi mdi-plus"></i></button>
     </div>
     <ModalForm />
     <BlogCard class="" v-for="blog in blogs" :key="blog.id" :blog="blog" />
